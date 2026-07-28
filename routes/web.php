@@ -10,17 +10,15 @@ Route::get('/about', function () {
     return view('pages.about');
 })->name('about');
 
-Route::get('/courses', function () {
-    return view('pages.courses');
-})->name('courses');
+Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('courses');
+Route::get('/api/courses/{id}', [App\Http\Controllers\CourseController::class, 'show'])->name('api.courses.show');
 
 Route::get('/admissions', function () {
     return view('pages.admissions');
 })->name('admissions');
 
-Route::get('/news', function () {
-    return view('pages.news');
-})->name('news');
+Route::get('/news', [App\Http\Controllers\NewsController::class, 'index'])->name('news');
+Route::get('/api/posts/{id}', [App\Http\Controllers\NewsController::class, 'showPost'])->name('api.posts.show');
 
 Route::get('/contact', function () {
     return view('pages.contact');
