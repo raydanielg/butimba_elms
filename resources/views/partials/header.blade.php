@@ -96,27 +96,100 @@
                     @endguest
                 </div>
                 {{-- Mobile menu button --}}
-                <button id="mobileMenuBtn" class="md:hidden text-white p-1.5" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+                <button id="mobileMenuBtn" class="md:hidden text-white p-1.5" onclick="openMobileDrawer()">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
         </div>
-        {{-- Mobile Menu --}}
-        <div id="mobileMenu" class="hidden md:hidden bg-emerald-900 border-t border-emerald-700">
-            <div class="px-4 py-3 space-y-2 text-sm font-semibold">
-                <a href="{{ url('/') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="en">Home</a>
-                <a href="{{ url('/') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="sw">Mwanzo</a>
-                <a href="{{ url('/about') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="en">About Us</a>
-                <a href="{{ url('/about') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="sw">Kuhusu Sisi</a>
-                <a href="{{ url('/courses') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="en">Courses</a>
-                <a href="{{ url('/courses') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="sw">Kozi</a>
-                <a href="{{ url('/admissions') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="en">Admissions</a>
-                <a href="{{ url('/admissions') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="sw">Uandikishaji</a>
-                <a href="{{ url('/news') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="en">Blogs &amp; Events</a>
-                <a href="{{ url('/news') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="sw">Blogs &amp; Matukio</a>
-                <a href="{{ url('/contact') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="en">Contact</a>
-                <a href="{{ url('/contact') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="sw">Wasiliana</a>
-            </div>
-        </div>
     </nav>
 </header>
+
+{{-- Mobile Side Drawer --}}
+<div id="mobileDrawer" class="fixed inset-0 z-[9999] md:hidden">
+    {{-- Backdrop --}}
+    <div id="drawerBackdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" onclick="closeMobileDrawer()"></div>
+    {{-- Drawer Panel --}}
+    <div id="drawerPanel" class="absolute right-0 top-0 h-full w-72 max-w-[80vw] bg-emerald-900 shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
+        {{-- Drawer Header --}}
+        <div class="flex items-center justify-between px-5 py-4 border-b border-emerald-700/50">
+            <div class="flex items-center gap-2">
+                <img src="{{ asset('logo.png') }}" alt="Butimba" class="w-9 h-9 object-contain">
+                <span class="text-xs font-extrabold text-white leading-tight">BUTIMBA<br><span class="text-gold-400 font-bold">TEACHERS COLLEGE</span></span>
+            </div>
+            <button onclick="closeMobileDrawer()" class="text-white/70 hover:text-white hover:bg-white/10 rounded-lg p-1.5 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        {{-- Drawer Navigation --}}
+        <div class="flex-1 overflow-y-auto px-3 py-4 space-y-1">
+            <a href="{{ url('/') }}" onclick="closeMobileDrawer()" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-semibold text-white hover:bg-emerald-800/60 transition-colors {{ ($activeNav ?? '') === 'home' ? 'bg-emerald-800/60 text-gold-300' : '' }}">
+                <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                <span data-lang="en">Home</span><span data-lang="sw">Mwanzo</span>
+            </a>
+            <a href="{{ url('/about') }}" onclick="closeMobileDrawer()" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-semibold text-white hover:bg-emerald-800/60 transition-colors {{ ($activeNav ?? '') === 'about' ? 'bg-emerald-800/60 text-gold-300' : '' }}">
+                <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span data-lang="en">About Us</span><span data-lang="sw">Kuhusu Sisi</span>
+            </a>
+            <a href="{{ url('/courses') }}" onclick="closeMobileDrawer()" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-semibold text-white hover:bg-emerald-800/60 transition-colors {{ ($activeNav ?? '') === 'courses' ? 'bg-emerald-800/60 text-gold-300' : '' }}">
+                <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                <span data-lang="en">Courses</span><span data-lang="sw">Kozi</span>
+            </a>
+            <a href="{{ url('/admissions') }}" onclick="closeMobileDrawer()" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-semibold text-white hover:bg-emerald-800/60 transition-colors {{ ($activeNav ?? '') === 'admissions' ? 'bg-emerald-800/60 text-gold-300' : '' }}">
+                <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                <span data-lang="en">Admissions</span><span data-lang="sw">Uandikishaji</span>
+            </a>
+            <a href="{{ url('/news') }}" onclick="closeMobileDrawer()" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-semibold text-white hover:bg-emerald-800/60 transition-colors {{ ($activeNav ?? '') === 'news' ? 'bg-emerald-800/60 text-gold-300' : '' }}">
+                <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 0a2 2 0 012 2v8a2 2 0 01-2 2m2-0V8a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                <span data-lang="en">Blogs &amp; Events</span><span data-lang="sw">Blogs &amp; Matukio</span>
+            </a>
+            <a href="{{ url('/contact') }}" onclick="closeMobileDrawer()" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-semibold text-white hover:bg-emerald-800/60 transition-colors {{ ($activeNav ?? '') === 'contact' ? 'bg-emerald-800/60 text-gold-300' : '' }}">
+                <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span data-lang="en">Contact</span><span data-lang="sw">Wasiliana</span>
+            </a>
+        </div>
+        {{-- Drawer Footer: Auth Buttons --}}
+        <div class="px-4 py-4 border-t border-emerald-700/50 space-y-2.5">
+            @guest
+                <a href="{{ route('login') }}" onclick="closeMobileDrawer()" class="block w-full text-center py-2.5 text-sm font-bold text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg transition-colors">
+                    <span data-lang="en">Login</span><span data-lang="sw">Ingia</span>
+                </a>
+                <a href="{{ route('register') }}" onclick="closeMobileDrawer()" class="block w-full text-center py-2.5 text-sm font-bold text-emerald-950 bg-gold-400 hover:bg-gold-300 rounded-lg shadow-md transition-colors">
+                    <span data-lang="en">Register</span><span data-lang="sw">Jisajili</span>
+                </a>
+            @else
+                <a href="{{ url('/home') }}" onclick="closeMobileDrawer()" class="block w-full text-center py-2.5 text-sm font-bold text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg transition-colors">
+                    <span data-lang="en">Dashboard</span><span data-lang="sw">Dashibodi</span>
+                </a>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); closeMobileDrawer(); document.getElementById('logout-form').submit();" class="block w-full text-center py-2.5 text-sm font-bold text-red-200 bg-red-500/20 hover:bg-red-500/30 border border-red-400/30 rounded-lg transition-colors">
+                    <span data-lang="en">Logout</span><span data-lang="sw">Toka</span>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">@csrf</form>
+            @endguest
+        </div>
+    </div>
+</div>
+
+<script>
+function openMobileDrawer() {
+    var drawer = document.getElementById('mobileDrawer');
+    var backdrop = document.getElementById('drawerBackdrop');
+    var panel = document.getElementById('drawerPanel');
+    drawer.classList.remove('pointer-events-none');
+    backdrop.classList.remove('opacity-0', 'pointer-events-none');
+    panel.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden';
+}
+function closeMobileDrawer() {
+    var backdrop = document.getElementById('drawerBackdrop');
+    var panel = document.getElementById('drawerPanel');
+    backdrop.classList.add('opacity-0', 'pointer-events-none');
+    panel.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+    setTimeout(function() {
+        document.getElementById('mobileDrawer').classList.add('pointer-events-none');
+    }, 300);
+}
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMobileDrawer();
+});
+</script>
