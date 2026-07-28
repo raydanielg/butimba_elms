@@ -7,6 +7,12 @@
             <span class="font-semibold tracking-wide" data-lang="sw">SERIKALI YA JAMHURI YA MUUNGANO WA TANZANIA</span>
         </div>
         <div class="hidden sm:flex items-center gap-4">
+            <div class="flex items-center gap-3 mr-4 border-r border-emerald-700 pr-4">
+                <a href="tel:0689363690" class="hover:text-gold-400 transition-colors flex items-center gap-1">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    0689 363 690
+                </a>
+            </div>
             <span class="text-emerald-200" data-lang="en">Ministry of Education, Science and Technology</span>
             <span class="text-emerald-200" data-lang="sw">Wizara ya Elimu, Sayansi na Teknolojia</span>
         </div>
@@ -82,10 +88,8 @@
                     <a href="{{ url('/courses') }}" class="nav-link hover:text-gold-300 transition-colors py-3 {{ ($activeNav ?? '') === 'courses' ? 'active' : '' }}" data-lang="sw">Kozi</a>
                     <a href="{{ url('/admissions') }}" class="nav-link hover:text-gold-300 transition-colors py-3 {{ ($activeNav ?? '') === 'admissions' ? 'active' : '' }}" data-lang="en">Admissions</a>
                     <a href="{{ url('/admissions') }}" class="nav-link hover:text-gold-300 transition-colors py-3 {{ ($activeNav ?? '') === 'admissions' ? 'active' : '' }}" data-lang="sw">Uandikishaji</a>
-                    <a href="{{ url('/e-library') }}" class="nav-link hover:text-gold-300 transition-colors py-3 {{ ($activeNav ?? '') === 'library' ? 'active' : '' }}" data-lang="en">E-Library</a>
-                    <a href="{{ url('/e-library') }}" class="nav-link hover:text-gold-300 transition-colors py-3 {{ ($activeNav ?? '') === 'library' ? 'active' : '' }}" data-lang="sw">Maktaba</a>
-                    <a href="{{ url('/news') }}" class="nav-link hover:text-gold-300 transition-colors py-3 {{ ($activeNav ?? '') === 'news' ? 'active' : '' }}" data-lang="en">News &amp; Events</a>
-                    <a href="{{ url('/news') }}" class="nav-link hover:text-gold-300 transition-colors py-3 {{ ($activeNav ?? '') === 'news' ? 'active' : '' }}" data-lang="sw">Habari</a>
+                    <a href="{{ url('/news') }}" class="nav-link hover:text-gold-300 transition-colors py-3 {{ ($activeNav ?? '') === 'news' ? 'active' : '' }}" data-lang="en">Blogs &amp; Events</a>
+                    <a href="{{ url('/news') }}" class="nav-link hover:text-gold-300 transition-colors py-3 {{ ($activeNav ?? '') === 'news' ? 'active' : '' }}" data-lang="sw">Blogs &amp; Matukio</a>
                     <a href="{{ url('/contact') }}" class="nav-link hover:text-gold-300 transition-colors py-3 {{ ($activeNav ?? '') === 'contact' ? 'active' : '' }}" data-lang="en">Contact</a>
                     <a href="{{ url('/contact') }}" class="nav-link hover:text-gold-300 transition-colors py-3 {{ ($activeNav ?? '') === 'contact' ? 'active' : '' }}" data-lang="sw">Wasiliana</a>
                 </div>
@@ -129,10 +133,8 @@
                 <a href="{{ url('/courses') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="sw">Kozi</a>
                 <a href="{{ url('/admissions') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="en">Admissions</a>
                 <a href="{{ url('/admissions') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="sw">Uandikishaji</a>
-                <a href="{{ url('/e-library') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="en">E-Library</a>
-                <a href="{{ url('/e-library') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="sw">Maktaba</a>
-                <a href="{{ url('/news') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="en">News &amp; Events</a>
-                <a href="{{ url('/news') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="sw">Habari</a>
+                <a href="{{ url('/news') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="en">Blogs &amp; Events</a>
+                <a href="{{ url('/news') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="sw">Blogs &amp; Matukio</a>
                 <a href="{{ url('/contact') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="en">Contact</a>
                 <a href="{{ url('/contact') }}" class="block text-white hover:text-gold-300 py-1.5" data-lang="sw">Wasiliana</a>
             </div>
