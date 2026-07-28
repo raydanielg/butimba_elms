@@ -170,9 +170,15 @@
     function setLang(lang) {
         document.body.classList.remove('lang-en', 'lang-sw');
         document.body.classList.add('lang-' + lang);
-        document.getElementById('langEn').classList.remove('active');
-        document.getElementById('langSw').classList.remove('active');
-        document.getElementById('lang' + lang.charAt(0).toUpperCase() + lang.slice(1)).classList.add('active');
+        var cap = lang.charAt(0).toUpperCase() + lang.slice(1);
+        ['langEn','langSw','langEnMobile','langSwMobile'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) el.classList.remove('active');
+        });
+        var mainBtn = document.getElementById('lang' + cap);
+        if (mainBtn) mainBtn.classList.add('active');
+        var mobileBtn = document.getElementById('lang' + cap + 'Mobile');
+        if (mobileBtn) mobileBtn.classList.add('active');
         try { localStorage.setItem('lang', lang); } catch(e) {}
     }
     try {

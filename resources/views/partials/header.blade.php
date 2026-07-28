@@ -72,8 +72,8 @@
                     <a href="{{ url('/contact') }}" class="nav-link hover:text-gold-300 transition-colors py-3 {{ ($activeNav ?? '') === 'contact' ? 'active' : '' }}" data-lang="en">Contact</a>
                     <a href="{{ url('/contact') }}" class="nav-link hover:text-gold-300 transition-colors py-3 {{ ($activeNav ?? '') === 'contact' ? 'active' : '' }}" data-lang="sw">Wasiliana</a>
                 </div>
-                <div class="flex items-center gap-3 ml-auto">
-                    {{-- Language Toggle --}}
+                {{-- Desktop: Language Toggle + Auth --}}
+                <div class="hidden md:flex items-center gap-3 ml-auto">
                     <div class="flex items-center gap-1 bg-emerald-900/50 rounded-full px-1 py-0.5 border border-emerald-600/50">
                         <button onclick="setLang('en')" id="langEn" class="lang-toggle active text-xs font-bold px-2.5 py-1 rounded-full text-white">
                             EN
@@ -95,17 +95,27 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">@csrf</form>
                     @endguest
                 </div>
-                {{-- Mobile menu button --}}
-                <button id="mobileMenuBtn" class="md:hidden text-white p-1.5" onclick="openMobileDrawer()">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
+                {{-- Mobile: Language Toggle + Hamburger --}}
+                <div class="flex md:hidden items-center gap-2 ml-auto">
+                    <div class="flex items-center gap-1 bg-emerald-900/50 rounded-full px-1 py-0.5 border border-emerald-600/50">
+                        <button onclick="setLang('en')" id="langEnMobile" class="lang-toggle active text-xs font-bold px-2 py-0.5 rounded-full text-white">
+                            EN
+                        </button>
+                        <button onclick="setLang('sw')" id="langSwMobile" class="lang-toggle text-xs font-bold px-2 py-0.5 rounded-full text-emerald-200">
+                            SW
+                        </button>
+                    </div>
+                    <button id="mobileMenuBtn" class="text-white p-1.5" onclick="openMobileDrawer()">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
 </header>
 
 {{-- Mobile Side Drawer --}}
-<div id="mobileDrawer" class="fixed inset-0 z-[9999] md:hidden">
+<div id="mobileDrawer" class="fixed inset-0 z-[9999] md:hidden pointer-events-none">
     {{-- Backdrop --}}
     <div id="drawerBackdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" onclick="closeMobileDrawer()"></div>
     {{-- Drawer Panel --}}
