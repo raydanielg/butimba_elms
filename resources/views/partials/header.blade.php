@@ -47,30 +47,9 @@
                 </div>
             </div>
 
-            {{-- Right Logo (Tanzania Coat of Arms) --}}
+            {{-- Right Logo (Duplicate College Logo) --}}
             <div class="flex items-center gap-3 slide-in-right">
-                <div class="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 bg-emerald-50 rounded-full border-2 border-emerald-200 flex items-center justify-center">
-                    <svg viewBox="0 0 100 100" class="w-14 h-14 sm:w-16 sm:h-16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M50 15 L72 20 L72 50 Q72 68 50 80 Q28 68 28 50 L28 20 Z" fill="#1a9f8e" stroke="#f9ac00" stroke-width="1.5"/>
-                        <path d="M50 15 L72 20 L72 35 L28 35 L28 20 Z" fill="#024938"/>
-                        <path d="M50 15 L72 20 L72 22 L28 22 L28 20 Z" fill="#fcd116"/>
-                        <path d="M50 15 L72 20 L72 21 L28 21 L28 20 Z" fill="#000" opacity="0.3"/>
-                        <line x1="50" y1="15" x2="50" y2="35" stroke="#000" stroke-width="0.5" opacity="0.3"/>
-                        <g stroke="#f9ac00" stroke-width="1.5" fill="none" opacity="0.8">
-                            <line x1="38" y1="40" x2="48" y2="55"/>
-                            <line x1="62" y1="40" x2="52" y2="55"/>
-                            <path d="M36 38 L40 42 M64 38 L60 42" stroke-width="1.5"/>
-                        </g>
-                        <g fill="#f9ac00">
-                            <rect x="49" y="55" width="2" height="12" rx="1"/>
-                            <path d="M47 55 Q50 48 53 55 Z"/>
-                        </g>
-                        <path d="M22 45 Q18 55 24 70" fill="none" stroke="#f5f5f0" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M78 45 Q82 55 76 70" fill="none" stroke="#f5f5f0" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M20 72 Q50 78 80 72 L80 82 Q50 88 20 82 Z" fill="#f9ac00" opacity="0.9"/>
-                        <text x="50" y="80" text-anchor="middle" font-size="4.5" font-weight="bold" fill="#001816" font-family="serif">UHURU NA UMOJA</text>
-                    </svg>
-                </div>
+                <img src="{{ asset('logo.png') }}" alt="Butimba Teachers College" class="w-16 h-16 sm:w-20 sm:h-20 object-contain flex-shrink-0">
             </div>
         </div>
     </div>
