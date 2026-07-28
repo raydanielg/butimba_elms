@@ -114,32 +114,24 @@
             </p>
 
             {{-- CTA Buttons --}}
-            <div class="mt-10 flex flex-col sm:flex-row items-stretch justify-center gap-4 fade-in-up delay-3 max-w-2xl mx-auto">
+            <div class="mt-8 flex flex-row items-stretch justify-center gap-2 sm:gap-3 fade-in-up delay-3 max-w-lg mx-auto">
                 {{-- Admissions Button --}}
-                <a href="{{ url('/admissions') }}" class="group flex-1 relative overflow-hidden px-8 py-5 text-sm font-extrabold text-emerald-950 bg-gradient-to-br from-gold-300 via-gold-400 to-gold-500 hover:from-gold-400 hover:via-gold-500 hover:to-gold-600 rounded-xl shadow-xl hover:shadow-2xl hover:shadow-gold-500/30 transition-all flex items-center justify-center gap-3 border-2 border-gold-200/50">
+                <a href="{{ url('/admissions') }}" class="group flex-1 relative overflow-hidden px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-emerald-950 bg-gradient-to-br from-gold-300 to-gold-500 hover:from-gold-400 hover:to-gold-600 rounded-lg shadow-lg hover:shadow-xl hover:shadow-gold-500/30 transition-all flex items-center justify-center gap-2 border border-gold-200/40">
                     <span class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-                    <span class="w-10 h-10 rounded-full bg-emerald-900/10 flex items-center justify-center flex-shrink-0">
-                        <svg class="w-5 h-5 text-emerald-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                    </span>
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                     <span class="flex flex-col items-start leading-tight">
                         <span data-lang="en">Admissions</span>
                         <span data-lang="sw">Uandikishaji</span>
-                        <span class="text-[10px] font-medium text-emerald-900/60 mt-0.5" data-lang="en">Apply now & join us</span>
-                        <span class="text-[10px] font-medium text-emerald-900/60 mt-0.5" data-lang="sw">Omba sasa & jiunge nasi</span>
                     </span>
                 </a>
 
                 {{-- Courses Button --}}
-                <a href="{{ url('/courses') }}" class="group flex-1 relative overflow-hidden px-8 py-5 text-sm font-extrabold text-white bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-800 hover:from-emerald-500 hover:via-emerald-600 hover:to-emerald-700 rounded-xl shadow-xl hover:shadow-2xl hover:shadow-emerald-500/30 transition-all flex items-center justify-center gap-3 border-2 border-emerald-400/30">
+                <a href="{{ url('/courses') }}" class="group flex-1 relative overflow-hidden px-4 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-white bg-gradient-to-br from-emerald-600 to-emerald-800 hover:from-emerald-500 hover:to-emerald-700 rounded-lg shadow-lg hover:shadow-xl hover:shadow-emerald-500/30 transition-all flex items-center justify-center gap-2 border border-emerald-400/30">
                     <span class="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-                    <span class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                        <svg class="w-5 h-5 text-gold-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                    </span>
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gold-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
                     <span class="flex flex-col items-start leading-tight">
                         <span data-lang="en">Courses</span>
                         <span data-lang="sw">Kozi</span>
-                        <span class="text-[10px] font-medium text-emerald-100/60 mt-0.5" data-lang="en">Explore our programmes</span>
-                        <span class="text-[10px] font-medium text-emerald-100/60 mt-0.5" data-lang="sw">Chunguza programu zetu</span>
                     </span>
                 </a>
             </div>
