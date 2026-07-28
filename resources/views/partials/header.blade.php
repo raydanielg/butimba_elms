@@ -21,35 +21,35 @@
 
 {{-- Header with Two Logos --}}
 <header class="bg-white shadow-md border-b-2 border-emerald-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
-        <div class="flex items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-3">
+        <div class="flex items-center justify-between gap-2 sm:gap-4">
             {{-- Left Logo --}}
-            <div class="flex items-center gap-3 slide-in-left">
-                <img src="{{ asset('logo.png') }}" alt="Butimba Teachers College" class="w-16 h-16 sm:w-20 sm:h-20 object-contain flex-shrink-0">
+            <div class="flex items-center slide-in-left">
+                <img src="{{ asset('logo.png') }}" alt="Butimba Teachers College" class="w-10 h-10 sm:w-16 sm:h-16 lg:w-20 lg:h-20 object-contain flex-shrink-0">
             </div>
 
             {{-- Center Title --}}
-            <div class="text-center flex-1 fade-in">
-                <h1 class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-emerald-800 tracking-tight leading-tight">
+            <div class="text-center flex-1 fade-in min-w-0">
+                <h1 class="text-sm sm:text-xl lg:text-2xl font-extrabold text-emerald-800 tracking-tight leading-tight truncate">
                     BUTIMBA TEACHERS COLLEGE
                 </h1>
-                <p class="text-xs sm:text-sm text-gray-500 font-semibold mt-0.5" data-lang="en">
+                <p class="text-[10px] sm:text-xs text-gray-500 font-semibold mt-0.5 hidden sm:block" data-lang="en">
                     E-Learning Management System (ELMS)
                 </p>
-                <p class="text-xs sm:text-sm text-gray-500 font-semibold mt-0.5" data-lang="sw">
+                <p class="text-[10px] sm:text-xs text-gray-500 font-semibold mt-0.5 hidden sm:block" data-lang="sw">
                     Mfumo wa Elimu kwa Mtandao (ELMS)
                 </p>
-                <div class="flex items-center justify-center gap-2 mt-1">
-                    <span class="h-0.5 w-8 bg-gold-400"></span>
+                <div class="hidden sm:flex items-center justify-center gap-2 mt-1">
+                    <span class="h-0.5 w-6 bg-gold-400"></span>
                     <p class="text-[10px] sm:text-xs text-gold-600 font-bold italic tracking-wide" data-lang="en">Quality education for modern teachers</p>
-                    <p class="text-[10px] sm:text-xs text-gold-600 font-bold italic tracking-wide" data-lang="sw">Elimu bora kwa walimu wa kisasa</p>
-                    <span class="h-0.5 w-8 bg-gold-400"></span>
+                    <p class="text-[10px] sm:text-xs text-gold-600 font-bold italic tracking-wide" data-lang="sw">Elimu bora kwa walimu wa kisasi</p>
+                    <span class="h-0.5 w-6 bg-gold-400"></span>
                 </div>
             </div>
 
             {{-- Right Logo (Duplicate College Logo) --}}
-            <div class="flex items-center gap-3 slide-in-right">
-                <img src="{{ asset('logo.png') }}" alt="Butimba Teachers College" class="w-16 h-16 sm:w-20 sm:h-20 object-contain flex-shrink-0">
+            <div class="flex items-center slide-in-right">
+                <img src="{{ asset('logo.png') }}" alt="Butimba Teachers College" class="w-10 h-10 sm:w-16 sm:h-16 lg:w-20 lg:h-20 object-contain flex-shrink-0">
             </div>
         </div>
     </div>
