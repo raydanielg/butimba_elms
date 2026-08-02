@@ -9,6 +9,7 @@ class Application extends Model
 {
     protected $fillable = [
         'tracking_code',
+        'user_id',
         'email',
         'full_name',
         'gender',
@@ -26,12 +27,17 @@ class Application extends Model
         'certificate_number',
         'applied_course',
         'declaration_confirmed',
+        'payment_slip_path',
         'status',
+        'admin_notes',
+        'reviewed_at',
+        'reviewed_by',
     ];
 
     protected $casts = [
         'dob' => 'date',
         'declaration_confirmed' => 'boolean',
+        'reviewed_at' => 'datetime',
     ];
 
     protected static function booted(): void
@@ -48,6 +54,16 @@ class Application extends Model
             $code = 'BTC-' . strtoupper(Str::random(8));
         }
         return $code;
+    }
+
+    public function reviewer()
+    {
+        return $this->belongsTo(User::class, 'reviewed_by');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
 
